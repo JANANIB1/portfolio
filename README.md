@@ -4,7 +4,7 @@ A modern personal portfolio built with **React, TypeScript, Vite, Tailwind CSS, 
 
 ## 🚀 Live Demo
 
-**Portfolio:** [https://YOUR-VERCEL-URL.vercel.app](https://janani-b-portfolio.vercel.app/)
+**Portfolio:** [janani-b-portfolio](https://janani-b-portfolio.vercel.app/)
 
 ---
 
@@ -155,11 +155,11 @@ It includes projects such as:
 
 **Email:** jananib81@gmail.com
 
-**LinkedIn:** [https://linkedin.com/in/YOUR-LINKEDIN](https://www.linkedin.com/in/janani-b-6a18102ab/)
+**LinkedIn:** [LINKEDIN](https://www.linkedin.com/in/janani-b-6a18102ab/)
 
 **GitHub:** https://github.com/JANANIB1
 
-**Portfolio:** [https://YOUR-VERCEL-URL.vercel.app](https://janani-b-portfolio.vercel.app/)
+**Portfolio:** [janani-b-portfolio](https://janani-b-portfolio.vercel.app/)
 
 ---
 
