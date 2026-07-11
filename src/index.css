@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  .dark {
+    --canvas: 9 10 12;
+    --canvas-raised: 13 15 18;
+    --canvas-panel: 17 19 23;
+    --canvas-line: 28 31 37;
+
+    --ink-50: 245 246 248;
+    --ink-100: 226 228 233;
+    --ink-200: 191 196 205;
+    --ink-300: 148 156 170;
+    --ink-400: 108 116 130;
+    --ink-500: 80 88 101;
+    --ink-600: 58 65 76;
+    --ink-700: 40 45 53;
+  }
+
+  /* Light mode keeps the same accent/signal system but swaps the canvas for
+     a clean, cool off-white so it never reads as a generic inverted theme. */
+  .light {
+    --canvas: 250 250 251;
+    --canvas-raised: 255 255 255;
+    --canvas-panel: 255 255 255;
+    --canvas-line: 228 229 233;
+
+    --ink-50: 17 19 23;
+    --ink-100: 30 33 38;
+    --ink-200: 55 60 68;
+    --ink-300: 85 91 101;
+    --ink-400: 120 126 136;
+    --ink-500: 152 157 166;
+    --ink-600: 188 192 199;
+    --ink-700: 216 219 224;
+  }
+
+  * {
+    @apply border-canvas-line;
+  }
+
+  html {
+    scroll-behavior: auto; /* Lenis takes over smooth scrolling */
+  }
+
+  body {
+    background-color: #090a0c;
+  }
+
+  ::selection {
+    background-color: rgba(76, 130, 255, 0.28);
+    color: #7aa3ff;
+  }
+
+  /* Visible, on-brand focus ring for keyboard users. */
+  :focus-visible {
+    outline: 2px solid #4c82ff;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Slim, quiet scrollbar that matches the canvas. */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090a0c;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1c2027;
+    border-radius: 999px;
+    border: 2px solid #090a0c;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a2f38;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-[1180px] px-6 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.22em] text-accent/80;
+  }
+
+  .panel {
+    @apply relative rounded-2xl border border-canvas-line bg-canvas-panel/70 backdrop-blur-sm;
+  }
+
+  /* A quiet diagonal light-sweep that plays once on hover — the one
+     recurring micro-interaction used across cards, evoking a security scan
+     without leaning on hacker-movie visuals. */
+  .scan-hover {
+    @apply relative overflow-hidden;
+  }
+  .scan-hover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      115deg,
+      transparent 40%,
+      rgba(76, 130, 255, 0.08) 50%,
+      transparent 60%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+  .scan-hover:hover::after {
+    transform: translateX(120%);
+  }
+}
+
+/* Custom cursor is disabled on touch devices via JS; this keeps the native
+   cursor hidden only when the custom one is actually mounted. */
+.cursor-active {
+  cursor: none;
+}
+.cursor-active a,
+.cursor-active button,
+.cursor-active [role='button'] {
+  cursor: none;
+}
