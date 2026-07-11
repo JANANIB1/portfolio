@@ -118,21 +118,7 @@ Then import the repository into Vercel.
 
 ---
 
-## 📸 Preview
 
-> Add screenshots of your portfolio here after deployment.
-
-Example:
-
-```
-Hero Section
-
-Projects Section
-
-Contact Section
-```
-
----
 
 ## 👨‍💻 About
 
