@@ -22,7 +22,7 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/janani-b-6a18102ab/',
     leetcode: 'https://leetcode.com/u/JANANI_B_/',
   },
-  resumeUrl: '/resume.pdf',
+  resumeUrl: 'https://drive.google.com/file/d/127tEsAHdraaRR_MpeAaTmGlat98ci80L/view?usp=sharing',
   exploring: [
     'Artificial Intelligence',
     'Cloud Computing',
